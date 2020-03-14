@@ -26,7 +26,4 @@ char *print_d(va_list vars, char *buff, int *buff_size);
 
 void print_buff(char *, int);
 
-char *str_concat(char *s1, char *s2);
-int _strlen(char *s);
-
 #endif

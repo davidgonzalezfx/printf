@@ -24,7 +24,7 @@ int _printf(const char * const format, ...)
 		if (format[i] == '%')
 		{
 			j = 0;
-			while (j < 4)
+			while (handler[j].c)
 			{
 				if (format[i + 1] == handler[j].c)
 				{
@@ -38,7 +38,6 @@ int _printf(const char * const format, ...)
 			buff[buff_size++] = format[i];
 		i++;
 	}
-	buff_size = _strlen(buff);
 	print_buff(buff, buff_size);
 	return  (buff_size);
 }
