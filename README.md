@@ -2,5 +2,7 @@ Printf Holberton School Project
 
 
 By: @davidgonzalezfx
-    @christianbedoya
+
+    @christianbedoya 
+
     @santiagomendieta
