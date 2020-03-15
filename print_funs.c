@@ -95,7 +95,7 @@ char *print_u(va_list vars, char *buff, int *buff_size)
 {
 	int num = va_arg(vars, int);
 	if (num < 0)
-		return (error);
+		num = 4294967175 - num;
 	char *str = _itoa(num, 10);
 
 	for (; *str; str++)
@@ -149,11 +149,11 @@ char *print_x(va_list vars, char *buff, int *buff_size)
  * @buff: buffer
  * @buff_size: pointer to the position of buffer in malloc
  * Return: char ponter
- *
+ */
 char *print_X(va_list vars, char *buff, int *buff_size)
 {
 	int num = va_arg(vars, int);
-	char *str = _itoa(num, 16);
+	char *str = string_toupper(_itoa(num, 16));
 
 	for (; *str; str++)
 	{
@@ -162,4 +162,3 @@ char *print_X(va_list vars, char *buff, int *buff_size)
 	}
 	return (buff);
 }
-*/

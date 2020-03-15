@@ -33,5 +33,6 @@ void print_buff(char *, int);
 filter *hand();
 void rev_string(char *s);
 char *_itoa(int num, int base);
+char *string_toupper(char *s);
 
 #endif
