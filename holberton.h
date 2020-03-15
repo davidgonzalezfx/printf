@@ -17,7 +17,7 @@ typedef struct funs
 	char *(*f)();
 } filter;
 
-int _printf(const char *const format, ...);
+int _printf(const char *format, ...);
 
 char *print_c(va_list vars, char *buff, int *buff_size);
 char *print_str(va_list vars, char *buff, int *buff_size);
