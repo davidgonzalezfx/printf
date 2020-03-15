@@ -15,9 +15,9 @@ int _printf(const char *format, ...)
 	if (!buff)
 		return (000);
 	va_start(vars, format);
-	while (format[i])
+	while (format && format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '%')
+		if (format[i] == '%')
 		{
 			j = 0;
 			while (handler[j].c)
@@ -27,8 +27,6 @@ int _printf(const char *format, ...)
 					buff = handler[j].f(vars, buff, size);
 					i++;
 				}
-				else
-					return (free(buff), -1);
 				j++;
 			}
 		}
@@ -36,7 +34,5 @@ int _printf(const char *format, ...)
 			buff[buff_size++] = format[i];
 		i++;
 	}
-	print_buff(buff, buff_size);
-	va_end(vars);
-	return  (buff_size);
+	return (print_buff(buff, buff_size), free(handler), va_end(vars), buff_size);
 }
