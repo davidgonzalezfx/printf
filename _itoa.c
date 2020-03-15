@@ -30,20 +30,15 @@ char *_itoa(int num, int base)
 {
 	char *tool = "0123456789abcdef";
 	char *new = malloc(64), *init;
-	int cp = num;
 
 	if (!new)
 		return (NULL);
 	init = new;
-	if (cp < 0)
-		num *= -1;
 	while (num > 0)
 	{
 		*new++ = tool[num % base];
 		num /= base;
 	}
-	if (cp < 0)
-		*new = '-';
 	rev_string(init);
 	return (init);
 }
