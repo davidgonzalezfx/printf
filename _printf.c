@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "holberton.h"
 /**
  * _printf - clone of printf native function
  * @format: string
@@ -15,8 +15,7 @@ int _printf(const char * const format, ...)
 		return (000);
 	*buff = '\0';
 
-	filter handler[] = {
-		{'c', print_c}, {'s', print_str}};
+	filter *handler = hand();
 
 	va_start(vars, format);
 	while (format[i])
