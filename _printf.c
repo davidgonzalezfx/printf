@@ -4,7 +4,7 @@
  * @format: string
  * Return: #chars printed
  */
-int _printf(const char * const format, ...)
+int _printf(const char *format, ...)
 {
 	va_list vars;
 	char *buff;
