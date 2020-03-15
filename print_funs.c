@@ -64,11 +64,13 @@ char *print_d(va_list vars, char *buff, int *buff_size)
 		*buff_size += 1;
 	}
 	char *str = _itoa(num, 10);
+	char *str2 = str;
 
 	for (; *str; str++)
 	{
 		buff[*buff_size] = *str;
 		*buff_size += 1;
 	}
+	free(str2);
 	return (buff);
 }
