@@ -8,15 +8,12 @@ int _printf(const char *format, ...)
 {
 	va_list vars;
 	char *buff;
+	filter *handler = hand();
 	int i = 0, j = 0, buff_size = 0, *size = &buff_size;
 
 	buff = malloc(2048);
 	if (!buff)
 		return (000);
-	*buff = '\0';
-
-	filter *handler = hand();
-
 	va_start(vars, format);
 	while (format[i])
 	{
