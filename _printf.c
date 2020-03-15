@@ -27,6 +27,8 @@ int _printf(const char *format, ...)
 					buff = handler[j].f(vars, buff, size);
 					i++;
 				}
+				else
+					return (free(buff), -1);
 				j++;
 			}
 		}
