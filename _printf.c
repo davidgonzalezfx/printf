@@ -15,24 +15,20 @@ int _printf(const char *format, ...)
 	if (!buff)
 		return (000);
 	va_start(vars, format);
-	while (format && format[i])
+	for (; format && format[i]; i++)
 	{
 		if (format[i] == '%')
-		{
-			j = 0;
-			while (handler[j].c)
+			for (j = 0; handler[j].c; j++)
 			{
 				if (format[i + 1] == handler[j].c)
+					buff = handler[j].f(vars, buff, size), i++;
+				else if (!handler[j + 1].c)
 				{
-					buff = handler[j].f(vars, buff, size);
-					i++;
+					return (-1);
 				}
-				j++;
 			}
-		}
 		else
 			buff[buff_size++] = format[i];
-		i++;
 	}
 	return (print_buff(buff, buff_size), free(handler), va_end(vars), buff_size);
 }
