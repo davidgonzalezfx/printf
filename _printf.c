@@ -35,5 +35,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	print_buff(buff, buff_size);
+	va_end(vars);
 	return  (buff_size);
 }
