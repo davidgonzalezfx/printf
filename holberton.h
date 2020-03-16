@@ -24,9 +24,15 @@ char *print_str(va_list vars, char *buff, int *buff_size);
 
 char *print_d(va_list vars, char *buff, int *buff_size);
 
+char *print_b(va_list vars, char *buff, int *buff_size);
+char *print_u(va_list vars, char *buff, int *buff_size);
+char *print_o(va_list vars, char *buff, int *buff_size);
+char *print_x(va_list vars, char *buff, int *buff_size);
+
 void print_buff(char *, int);
 filter *hand();
 void rev_string(char *s);
 char *_itoa(int num, int base);
+char *string_toupper(char *s);
 
 #endif
