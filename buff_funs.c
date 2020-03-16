@@ -6,6 +6,7 @@
  */
 void print_buff(char *buff, int size)
 {
+	buff[size] = '\0';
 	write(1, buff, size);
 	free(buff);
 }
