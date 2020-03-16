@@ -11,10 +11,13 @@ int _printf(const char *format, ...)
 	filter *handler = hand();
 	int i = 0, j = 0, buff_size = 0, *size = &buff_size;
 
+	if (!format)
+		return (-1);
 	buff = malloc(2048);
 	if (!buff)
 		return (000);
 	va_start(vars, format);
+
 	for (; format && format[i]; i++)
 	{
 		if (format[i] == '%')
