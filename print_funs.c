@@ -5,13 +5,13 @@
  */
 filter *hand()
 {
-	filter *hand = malloc(sizeof(filter) * 9);
+	filter *hand = malloc(sizeof(filter) * 10);
 
 	hand[0].c = 'c', hand[0].f = print_c, hand[1].c = 's', hand[1].f = print_str;
 	hand[2].c = 'i', hand[2].f = print_d, hand[3].c = 'd', hand[3].f = print_d;
 	hand[4].c = 'b', hand[4].f = print_b, hand[5].c = 'u', hand[5].f = print_u;
 	hand[6].c = 'o', hand[6].f = print_o, hand[7].c = 'x', hand[7].f = print_x;
-	hand[8].c = 'X', hand[8].f = print_X;
+	hand[8].c = 'X', hand[8].f = print_X, hand[9].c = '%', hand[9].f = print_pr;
 
 	return (hand);
 }
@@ -181,5 +181,18 @@ char *print_X(va_list vars, char *buff, int *buff_size)
 		*buff_size += 1;
 	}
 	free(str2);
+	return (buff);
+}
+/**
+ * print_X - print digits in hecadecimal uppercase base
+ * @vars: argument from list
+ * @buff: buffer
+ * @buff_size: pointer to the position of buffer in malloc
+ * Return: char ponter
+ */
+char *print_pr(__attribute__((unused)) va_list vars, char *buff, int *buff_size)
+{
+	buff[*buff_size] = '%';
+	*buff_size += 1;
 	return (buff);
 }
