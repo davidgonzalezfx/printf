@@ -1,15 +1,13 @@
 .Dd 16/3/20               
 .Dt _printf 
-.Sh NAME                 \" Section Header - required - don't modify
+.Sh NAME                 
 .Nm _printf - format and print data
-.\" Use .Nm macro to designate other names for the documented program.
 
-.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Sh SYNOPSIS             
 .Nm printf FORMAT [ARGUMENT]...
-                 \" Arguments
-.Sh DESCRIPTION          \" Section Header - required - don't modify
-The functions in the _printf()  produce output according to a for‐
-       mat  as  described  below.
+                 
+.Sh DESCRIPTION          
+The _printf() is a version created by us from the original printf function which seeks to  produce an output according to a format given.
        
 This function writes the output under the control of a format
        string that specifies how subsequent arguments (or  arguments  accessed
@@ -19,6 +17,8 @@ This function writes the output under the control of a format
 
         Format of the format string
 .Pp
+
+	The format of the string receives a string of charachters, 
 
        The format string is a character string, beginning and  ending  in  its
        initial  shift state, if any.  The format string is composed of zero or

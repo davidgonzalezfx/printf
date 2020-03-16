@@ -13,7 +13,9 @@ int _printf(const char *format, ...)
 
 	buff = malloc(2048);
 	if (!buff)
-		return (000);
+		return (-1);
+	if (format == NULL)
+		return (-1);
 	va_start(vars, format);
 	for (; format && format[i]; i++)
 	{
