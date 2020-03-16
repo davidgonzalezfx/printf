@@ -38,20 +38,39 @@ char *string_toupper(char *s)
 	return (s);
 }
 /**
+ * _calloc - allocates memory for an array
+ * @nmemb: # elements
+ * @size: size of elements
+ * Return: void, just allocate memory
+ */
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *mem;
+	unsigned int index = 0;
+
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	mem = malloc(nmemb * size);
+	if (mem == NULL)
+		return (NULL);
+	for (; index < (nmemb * size); index++)
+		*(mem + index) = 0;
+	return (mem);
+}
+/**
  * _itoa - convert num to base and return in string
  * @num: int
  * @base: int
  * Return: string
  */
-char *_itoa(int num, int base)
+char *_itoa(unsigned int num, int base)
 {
 	char *tool = "0123456789abcdef";
-	char *new = malloc(64), *init;
-
+	char *new = _calloc(64, 1), *init;
 	if (!new)
 		return (NULL);
 	init = new;
-	while (num > 0)
+	while (num != 0)
 	{
 		*new++ = tool[num % base];
 		num /= base;
