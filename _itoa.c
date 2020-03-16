@@ -20,13 +20,12 @@ void rev_string(char *s)
 		*(s + end--) = aux;
 	}
 }
-#include "holberton.h"
+
 /**
  * string_toupper - check the code for Holberton School students.
  * @s: char
  * Return: Char.
  */
-
 char *string_toupper(char *s)
 {
 	int i;
