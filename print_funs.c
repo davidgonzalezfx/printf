@@ -107,9 +107,7 @@ char *print_b(va_list vars, char *buff, int *buff_size)
  */
 char *print_u(va_list vars, char *buff, int *buff_size)
 {
-	int num = va_arg(vars, int);
-	if (num < 0)
-		num = 4294967175 - num;
+	unsigned int num = va_arg(vars, unsigned int);
 	char *str = _itoa(num, 10);
 	char *str2 = str;
 
@@ -131,7 +129,8 @@ char *print_u(va_list vars, char *buff, int *buff_size)
 char *print_o(va_list vars, char *buff, int *buff_size)
 {
 	int num = va_arg(vars, int);
-	char *str = _itoa(num, 8);
+	char *str;
+	str = _itoa(num, 8);
 	char *str2 = str;
 
 	for (; *str; str++)
@@ -151,7 +150,7 @@ char *print_o(va_list vars, char *buff, int *buff_size)
  */
 char *print_x(va_list vars, char *buff, int *buff_size)
 {
-	int num = va_arg(vars, int);
+	unsigned int num = va_arg(vars, unsigned int);
 	char *str = _itoa(num, 16);
 	char *str2 = str;
 
@@ -172,7 +171,7 @@ char *print_x(va_list vars, char *buff, int *buff_size)
  */
 char *print_X(va_list vars, char *buff, int *buff_size)
 {
-	int num = va_arg(vars, int);
+	unsigned int num = va_arg(vars, unsigned int);
 	char *str = string_toupper(_itoa(num, 16));
 	char *str2 = str;
 
