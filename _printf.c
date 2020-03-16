@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	buff = malloc(2048);
 	if (!buff)
-		return (000);
+		return (-1);
 	va_start(vars, format);
 
 	for (; format && format[i]; i++)
@@ -35,13 +35,10 @@ int _printf(const char *format, ...)
 				{
 					buff[*size] = '%';
 					*size += 1;
-					break;
 				}
 				else if ((tmp < 97 || tmp > 122) && tmp != '%')
-				{
-					free(buff), free(handler), va_end(vars);
-					return (-1);
-				}
+					if (tmp < 65 || tmp > 90)
+						return (free(buff), free(handler), va_end(vars), -1);
 			}
 		}
 		else
