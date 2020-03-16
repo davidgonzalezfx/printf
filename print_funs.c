@@ -5,13 +5,14 @@
  */
 filter *hand()
 {
-	filter *hand = malloc(sizeof(filter) * 10);
+	filter *hand = malloc(sizeof(filter) * 11);
 
 	hand[0].c = 'c', hand[0].f = print_c, hand[1].c = 's', hand[1].f = print_str;
 	hand[2].c = 'i', hand[2].f = print_d, hand[3].c = 'd', hand[3].f = print_d;
 	hand[4].c = 'b', hand[4].f = print_b, hand[5].c = 'u', hand[5].f = print_u;
 	hand[6].c = 'o', hand[6].f = print_o, hand[7].c = 'x', hand[7].f = print_x;
 	hand[8].c = 'X', hand[8].f = print_X, hand[9].c = '%', hand[9].f = pr;
+	hand[10].c = '\0', hand[10].f = NULL;
 
 	return (hand);
 }
