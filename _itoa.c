@@ -67,6 +67,7 @@ char *_itoa(unsigned int num, int base)
 {
 	char *tool = "0123456789abcdef";
 	char *new = _calloc(64, 1), *init;
+
 	if (!new)
 		return (NULL);
 	init = new;

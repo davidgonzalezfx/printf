@@ -29,7 +29,7 @@ char *print_u(va_list vars, char *buff, int *buff_size);
 char *print_o(va_list vars, char *buff, int *buff_size);
 char *print_x(va_list vars, char *buff, int *buff_size);
 char *print_X(va_list vars, char *buff, int *buff_size);
-char *print_pr(va_list vars, char *buff, int *buff_size);
+char *pr(__attribute__((unused)) va_list vars, char *buff, int *buff_size);
 
 void print_buff(char *, int);
 filter *hand();
