@@ -18,15 +18,11 @@ int _printf(const char *format, ...)
 	for (; format && format[i]; i++)
 	{
 		if (format[i] == '%')
+		{
 			for (j = 0; handler[j].c; j++)
-			{
 				if (format[i + 1] == handler[j].c)
 					buff = handler[j].f(vars, buff, size), i++;
-				else if (!handler[j + 1].c)
-				{
-					return (-1);
-				}
-			}
+		}
 		else
 			buff[buff_size++] = format[i];
 	}
