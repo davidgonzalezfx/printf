@@ -34,6 +34,7 @@ char *pr(__attribute__((unused)) va_list vars, char *buff, int *buff_size);
 char *print_p(va_list vars, char *buff, int *buff_size);
 char *print_r(va_list vars, char *buff, int *buff_size);
 char *print_rot13(va_list vars, char *buff, int *buff_size);
+char *print_S(va_list vars, char *buff, int *buff_size);
 
 void print_buff(char *, int);
 filter *hand();

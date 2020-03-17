@@ -5,7 +5,7 @@
  */
 filter *hand()
 {
-	filter *hand = malloc(sizeof(filter) * 14);
+	filter *hand = malloc(sizeof(filter) * 15);
 
 	if (!hand)
 		return (NULL);
@@ -17,7 +17,8 @@ filter *hand()
 	hand[10].c = 'p', hand[10].f = print_p;
 	hand[11].c = 'r', hand[11].f = print_r;
 	hand[12].c = 'R', hand[12].f = print_rot13;
-	hand[13].c = '\0', hand[13].f = NULL;
+	hand[13].c = 'S', hand[13].f = print_S;
+	hand[14].c = '\0', hand[14].f = NULL;
 
 	return (hand);
 }

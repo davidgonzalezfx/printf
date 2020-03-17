@@ -70,3 +70,32 @@ char *print_rot13(va_list vars, char *buff, int *buff_size)
 	free(str2);
 	return (buff);
 }
+/**
+ * print_S - string with non printable chars
+ * @vars: char to be added
+ * @buff: buffer
+ * @buff_size: index of buffer
+ * Return: char * - buffer
+ */
+char *print_S(va_list vars, char *buff, int *buff_size)
+{
+	char *str = va_arg(vars, char *);
+	char *tmp;
+
+	if (!str)
+		str = "(null)";
+	for (; *str; str++)
+	{
+		if (*str <= 32 || *str >= 127)
+		{
+			buff[*buff_size] = '\\', *buff_size += 1;
+			buff[*buff_size] = 'x', *buff_size += 1;
+			tmp = _itoa((int)*str, 16);
+			for (; *tmp; tmp++)
+				buff[*buff_size] = *tmp, *buff_size += 1;
+		}
+		else
+			buff[*buff_size] = *str, *buff_size += 1;
+	}
+	return (buff);
+}
