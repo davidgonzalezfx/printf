@@ -7,6 +7,8 @@ filter *hand()
 {
 	filter *hand = malloc(sizeof(filter) * 14);
 
+	if (!hand)
+		return (NULL);
 	hand[0].c = 'c', hand[0].f = print_c, hand[1].c = 's', hand[1].f = print_str;
 	hand[2].c = 'i', hand[2].f = print_d, hand[3].c = 'd', hand[3].f = print_d;
 	hand[4].c = 'b', hand[4].f = print_b, hand[5].c = 'u', hand[5].f = print_u;
