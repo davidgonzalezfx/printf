@@ -90,7 +90,7 @@ char *adress(long int num, int base)
 	init = new;
 	while (num != 0)
 	{
-		*new ++ = tool[num % base];
+		*new++ = tool[num % base];
 		num /= base;
 	}
 	rev_string(init);

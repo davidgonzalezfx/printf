@@ -13,8 +13,8 @@ char *print_p(va_list vars, char *buff, int *buff_size)
 	char *str = adress(num, 16);
 	char *str2 = str;
 
-	buff[*buff_size] = '0',*buff_size += 1;
-	buff[*buff_size] = 'x',*buff_size += 1;
+	buff[*buff_size] = '0', *buff_size += 1;
+	buff[*buff_size] = 'x', *buff_size += 1;
 	for (; *str; str++)
 		buff[*buff_size] = *str, *buff_size += 1;
 	free(str2);
@@ -36,7 +36,7 @@ char *print_r(va_list vars, char *buff, int *buff_size)
 		str = "(null)";
 	for (; *(str + end) != '\0'; end++)
 	{};
-	
+
 	for (end--; *(str + end); end--)
 		buff[*buff_size] = *(str + end), *buff_size += 1;
 	return (buff);

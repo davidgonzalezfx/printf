@@ -12,8 +12,10 @@ filter *hand()
 	hand[4].c = 'b', hand[4].f = print_b, hand[5].c = 'u', hand[5].f = print_u;
 	hand[6].c = 'o', hand[6].f = print_o, hand[7].c = 'x', hand[7].f = print_x;
 	hand[8].c = 'X', hand[8].f = print_X, hand[9].c = '%', hand[9].f = pr;
-	hand[10].c = 'p', hand[10].f = print_p, hand[11].c = 'r', hand[11].f = print_r;
-	hand[12].c = 'R', hand[12].f = print_rot13, hand[13].c = '\0', hand[13].f = NULL;
+	hand[10].c = 'p', hand[10].f = print_p;
+	hand[11].c = 'r', hand[11].f = print_r;
+	hand[12].c = 'R', hand[12].f = print_rot13;
+	hand[13].c = '\0', hand[13].f = NULL;
 
 	return (hand);
 }
