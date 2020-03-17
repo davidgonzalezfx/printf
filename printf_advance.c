@@ -85,7 +85,7 @@ char *print_S(va_list vars, char *buff, int *buff_size)
 		str = "(null)";
 	for (; *str; str++)
 	{
-		if (*str <= 32 || *str >= 127)
+		if (*str < 32 || *str >= 127)
 		{
 			buff[*buff_size] = '\\', *buff_size += 1;
 			buff[*buff_size] = 'x', *buff_size += 1;
