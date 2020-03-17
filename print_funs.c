@@ -67,6 +67,8 @@ char *print_d(va_list vars, char *buff, int *buff_size)
 	int num = va_arg(vars, int);
 	char *str, *str2;
 
+	if (!num)
+		return (buff[*buff_size] = '0', *buff_size += 1, buff);
 	if (num < 0)
 	{
 		num *= -1;
