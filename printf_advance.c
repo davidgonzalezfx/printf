@@ -80,6 +80,7 @@ char *print_rot13(va_list vars, char *buff, int *buff_size)
 char *print_S(va_list vars, char *buff, int *buff_size)
 {
 	char *str = va_arg(vars, char *);
+	char *tmp;
 
 	if (!str)
 		str = "(null)";
@@ -91,8 +92,10 @@ char *print_S(va_list vars, char *buff, int *buff_size)
 			buff[*buff_size] = 'x', *buff_size += 1;
 			if (*str < 16)
 				buff[*buff_size] = '0', *buff_size += 1;
-			buff[*buff_size] = *(string_toupper(_itoa((int)*str, 16)));
+			tmp = string_toupper(_itoa((int)*str, 16));
+			buff[*buff_size] = *tmp;
 			*buff_size += 1;
+			free(tmp);
 		}
 		else
 			buff[*buff_size] = *str, *buff_size += 1;
