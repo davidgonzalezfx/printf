@@ -36,9 +36,8 @@ int _printf(const char *format, ...)
 					buff[*size] = '%';
 					*size += 1;
 				}
-				else if ((tmp < 97 || tmp > 122) && tmp != '%')
-					if (tmp < 65 || tmp > 90)
-						return (free(buff), free(handler), va_end(vars), -1);
+				else if (tmp == '\0')
+					return (free(buff), free(handler), va_end(vars), -1);
 			}
 		}
 		else

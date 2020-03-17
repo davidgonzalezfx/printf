@@ -43,6 +43,8 @@ char *print_str(va_list vars, char *buff, int *buff_size)
 {
 	char *str = va_arg(vars, char *);
 
+	if (!str)
+		str = "(null)";
 	for (; *str; str++)
 	{
 		buff[*buff_size] = *str;
