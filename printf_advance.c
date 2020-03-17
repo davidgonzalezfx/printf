@@ -90,7 +90,7 @@ char *print_S(va_list vars, char *buff, int *buff_size)
 		{
 			buff[*buff_size] = '\\', *buff_size += 1;
 			buff[*buff_size] = 'x', *buff_size += 1;
-			tmp = _itoa((int)*str, 16);
+			tmp = string_toupper(_itoa((int)*str, 16));
 			for (; *tmp; tmp++)
 				buff[*buff_size] = *tmp, *buff_size += 1;
 		}
