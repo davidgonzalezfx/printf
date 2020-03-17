@@ -63,6 +63,8 @@ char *print_rot13(va_list vars, char *buff, int *buff_size)
 				*(str2 + i) = rot[j];
 				break;
 			}
+			else
+				*(str2 + i) = *(str + i);
 	for (i = 0; *(str2 + i); i++)
 		buff[*buff_size] = *(str2 + i), *buff_size += 1;
 	free(str2);
