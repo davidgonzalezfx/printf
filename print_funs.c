@@ -60,6 +60,7 @@ char *print_str(va_list vars, char *buff, int *buff_size)
 char *print_d(va_list vars, char *buff, int *buff_size)
 {
 	int num = va_arg(vars, int);
+	char *str, *str2;
 
 	if (num < 0)
 	{
@@ -67,8 +68,8 @@ char *print_d(va_list vars, char *buff, int *buff_size)
 		buff[*buff_size] = '-';
 		*buff_size += 1;
 	}
-	char *str = _itoa(num, 10);
-	char *str2 = str;
+	str = _itoa(num, 10);
+	str2 = str;
 
 	for (; *str; str++)
 	{
