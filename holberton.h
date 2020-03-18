@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <stdio.h>
 
@@ -31,11 +32,17 @@ char *print_x(va_list vars, char *buff, int *buff_size);
 char *print_X(va_list vars, char *buff, int *buff_size);
 char *pr(__attribute__((unused)) va_list vars, char *buff, int *buff_size);
 
+char *print_p(va_list vars, char *buff, int *buff_size);
+char *print_r(va_list vars, char *buff, int *buff_size);
+char *print_rot13(va_list vars, char *buff, int *buff_size);
+char *print_S(va_list vars, char *buff, int *buff_size);
+
 void print_buff(char *, int);
 filter *hand();
 void rev_string(char *s);
 void *_calloc(unsigned int nmemb, unsigned int size);
 char *_itoa(unsigned int num, int base);
+char *adress(long int num, int base);
 char *string_toupper(char *s);
 
 #endif

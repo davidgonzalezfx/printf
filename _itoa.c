@@ -79,3 +79,25 @@ char *_itoa(unsigned int num, int base)
 	rev_string(init);
 	return (init);
 }
+/**
+ * adress - _itoa for pointers
+ * @num: int
+ * @base: int
+ * Return: string
+ */
+char *adress(long int num, int base)
+{
+	char *tool = "0123456789abcdef";
+	char *new = _calloc(64, 1), *init;
+
+	if (!new)
+		return (NULL);
+	init = new;
+	while (num != 0)
+	{
+		*new++ = tool[num % base];
+		num /= base;
+	}
+	rev_string(init);
+	return (init);
+}

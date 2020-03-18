@@ -12,6 +12,8 @@ char *print_b(va_list vars, char *buff, int *buff_size)
 	char *str = _itoa(num, 2);
 	char *str2 = str;
 
+	if (!num)
+		return (buff[*buff_size] = '0', *buff_size += 1, buff);
 	for (; *str; str++)
 	{
 		buff[*buff_size] = *str;
@@ -33,6 +35,8 @@ char *print_u(va_list vars, char *buff, int *buff_size)
 	char *str = _itoa(num, 10);
 	char *str2 = str;
 
+	if (!num)
+		return (buff[*buff_size] = '0', *buff_size += 1, buff);
 	for (; *str; str++)
 	{
 		buff[*buff_size] = *str;
@@ -54,6 +58,8 @@ char *print_o(va_list vars, char *buff, int *buff_size)
 	char *str = _itoa(num, 8);
 	char *str2 = str;
 
+	if (!num)
+		return (buff[*buff_size] = '0', *buff_size += 1, buff);
 	for (; *str; str++)
 	{
 		buff[*buff_size] = *str;
@@ -75,6 +81,8 @@ char *print_x(va_list vars, char *buff, int *buff_size)
 	char *str = _itoa(num, 16);
 	char *str2 = str;
 
+	if (!num)
+		return (buff[*buff_size] = '0', *buff_size += 1, buff);
 	for (; *str; str++)
 	{
 		buff[*buff_size] = *str;
@@ -96,6 +104,8 @@ char *print_X(va_list vars, char *buff, int *buff_size)
 	char *str = string_toupper(_itoa(num, 16));
 	char *str2 = str;
 
+	if (!num)
+		return (buff[*buff_size] = '0', *buff_size += 1, buff);
 	for (; *str; str++)
 	{
 		buff[*buff_size] = *str;
