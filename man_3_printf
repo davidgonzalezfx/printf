@@ -1,45 +1,111 @@
-			Linux Manual PRINTF(3)					
+.TH _printf 1 "17 March 2020" "1.0" "_printf man page"
 
-DESCRIPTION PRINTF
-	    In _printf project we code from zero our own custom printf function.
-	    Native printf function allows you to print with certain formats. 
-	    We handle most basic format so you can print chars, strings, 
-	    positive and negative numbers, hex, octa and binary numbers among
-	    other formats. You can see man 3 of printf to understand how printf works.
+.SH NAME
+.B _print Holberton project
+- Custom _printf function coded from zero. Allows you to print with certain formats
+.TP
+.SH SYNOPSIS
+#include "holberton.h"
 
-DESCRIPTION ONE BY ONE
+int _printf(const char *format, ...)
+.SH
+.B DESCRIPTION
+We handle most basic format so you can print chars, strings, positive and negative numbers, hex, octa and binary numbers among other formats. You can see man 3 of printf to understand how printf works.
 
-	    PRINTF - format and print all data.
-	    The character % is followed by zero or more of the following flags:
+.SH 
+.B USAGE
 
-	    c	Print char values. the int argument is converted to an unsigned char
-	    	and the resulting character is written.
+.TP
+.B Compile
 
-	    s	Print strings. The const char * argument is expected to be a pointer
-	    	to an array of character type (pointer to a string).
+gcc -Wall -Werror -Wextra -pedantic *.c -o executable
 
-	    d	Print numbers. i has the same functionality.
+.TP
+.B Prototype
 
-	    b	Print nums converted to binary.
+int _printf(const char *format, ...)
 
-	    u	Print nums as unsigned int.
+.TP
+.B Return
 
-	    o	Print nums converted to octal.
+If everything is successful, the function returns the num of chars printed.
 
-	    x	Print nums converted to hexadecimal.
+-1 returned in error case
 
-	    %%	Print % character.
+.SH VALID FORMATS
+.TP
+The character % should be followed by one of the following valid formats:
+
+.B c
+Print char values. Convert int with ASCII table
+
+.B s
+Print strings
+
+.B d, i
+Print numbers [positive and negative]
+
+.B b
+Print nums converted to binary
+
+.B u
+Print nums as unsigned int.
+
+.B o
+Print nums converted to octal.
+
+.B x
+Print nums converted to hexa [lowercase]
+
+.B X
+Print nums converted to hexa [uppercase]
+
+.B %%
+Print % character.
+
+.B p
+Print memory adress [pointers]
+
+.B r
+Print string in reverse
+
+.B S
+Print string and non-printable chars [\x + ASCII value in hexa]
+
+.B R
+Print in rot13
+
+.SH
+.IP EXAMPLES
+.RS
+Print char values
+
+Input _printf("%c", 'x')  ->   x
+
+Input _printf("%c", 97)   ->   a
+
+Print strings
+
+Input _printf("Hello%s\n", " Holberton!")   ->   Hello Holberton!
+
+Print numbers
+Input _printf("%d", 1024)   ->   1024
+
+Input _printf("%i", -2048)   ->   -2048
+.RS
+
+.SH
+.IP MORE_EXAMPLES
+.RS
+Visit https://github.com/davidgonzalezfx/printf
+.RE
 
 
-EXAMPLES
+.SH BUGS
+Unknown
 
-	 int main (void)
-	 {
-	 printf ("char %c", char);
-    	 printf ("string  %s", string);
-	 printf ("%d", int);
-	 printf ("%b", binary);
-	 printf ("%u", unsigned int);
-	 printf ("%o", octal);
-	 printf ("%x", hexadecimal);
-	 }
+.SH CREDITS
+
+David Gonzalez.
+Santiago Mendieta.
+Christian Bedoya.
