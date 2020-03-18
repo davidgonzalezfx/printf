@@ -92,7 +92,7 @@ char *print_S(va_list vars, char *buff, int *buff_size)
 			buff[*buff_size] = 'x', *buff_size += 1;
 			if (*str < 16)
 				buff[*buff_size] = '0', *buff_size += 1;
-			tmp = string_toupper(_itoa((int)*str, 16));
+			tmp = string_toupper(_itoa(*str, 16));
 			buff[*buff_size] = *tmp;
 			*buff_size += 1;
 			free(tmp);
