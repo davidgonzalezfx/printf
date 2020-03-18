@@ -28,8 +28,15 @@ DESCRIPTION ONE BY ONE
 
 	    x	Print nums converted to hexadecimal.
 
+	    X	Print hexadecimal mayus
+
+	    p	Print pointer address or any other variable
+
+	rot13	Print the alphabet more 13 more fields
+
 	    %%	Print % character.
 
+	    
 
 EXAMPLES
 
@@ -43,3 +50,9 @@ EXAMPLES
 	 printf ("%o", octal);
 	 printf ("%x", hexadecimal);
 	 }
+
+CREDITS
+
+David Gonzalez.
+Santiago Mendieta.
+Christian Bedoya.
