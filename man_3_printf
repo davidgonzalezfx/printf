@@ -1,0 +1,111 @@
+.TH _printf 1 "17 March 2020" "1.0" "_printf man page"
+
+.SH NAME
+.B _print Holberton project
+- Custom _printf function coded from zero. Allows you to print with certain formats
+.TP
+.SH SYNOPSIS
+#include "holberton.h"
+
+int _printf(const char *format, ...)
+.SH
+.B DESCRIPTION
+We handle most basic format so you can print chars, strings, positive and negative numbers, hex, octa and binary numbers among other formats. You can see man 3 of printf to understand how printf works.
+
+.SH 
+.B USAGE
+
+.TP
+.B Compile
+
+gcc -Wall -Werror -Wextra -pedantic *.c -o executable
+
+.TP
+.B Prototype
+
+int _printf(const char *format, ...)
+
+.TP
+.B Return
+
+If everything is successful, the function returns the num of chars printed.
+
+-1 returned in error case
+
+.SH VALID FORMATS
+.TP
+The character % should be followed by one of the following valid formats:
+
+.B c
+Print char values. Convert int with ASCII table
+
+.B s
+Print strings
+
+.B d, i
+Print numbers [positive and negative]
+
+.B b
+Print nums converted to binary
+
+.B u
+Print nums as unsigned int.
+
+.B o
+Print nums converted to octal.
+
+.B x
+Print nums converted to hexa [lowercase]
+
+.B X
+Print nums converted to hexa [uppercase]
+
+.B %%
+Print % character.
+
+.B p
+Print memory adress [pointers]
+
+.B r
+Print string in reverse
+
+.B S
+Print string and non-printable chars [\x + ASCII value in hexa]
+
+.B R
+Print in rot13
+
+.SH
+.IP EXAMPLES
+.RS
+Print char values
+
+Input _printf("%c", 'x')  ->   x
+
+Input _printf("%c", 97)   ->   a
+
+Print strings
+
+Input _printf("Hello%s\n", " Holberton!")   ->   Hello Holberton!
+
+Print numbers
+Input _printf("%d", 1024)   ->   1024
+
+Input _printf("%i", -2048)   ->   -2048
+.RS
+
+.SH
+.IP MORE_EXAMPLES
+.RS
+Visit https://github.com/davidgonzalezfx/printf
+.RE
+
+
+.SH BUGS
+Unknown
+
+.SH CREDITS
+
+David Gonzalez.
+Santiago Mendieta.
+Christian Bedoya.
